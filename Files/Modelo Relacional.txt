@@ -1,0 +1,51 @@
+Participante (  pk(id: integer) , nome_participante: string, cpf: integer , email: string , instituicao_ensino: string , fk(endereco), fk(telefone) )
+
+Evento (  pk (id: integer) , nome_evento: string , ambito: string , coordenador: string , taxa_entrada:real , orgao_responsavel: string , capacidade_total: integer , fk(endereco: integer))
+
+Patrocinado_Evento (fk(id_patrocinador: integer) , fk(id_evento: integer))
+
+Patrocinador ( pk(id: interge) , nome_patrocinadore: string , quantia_patrocinio: real,fk(endereco) ,fk(telefone))
+
+Divulgacao ( fk(id_evento: integer) , fk(meio_divulgacao: integer) , fk(custo: integer))
+
+Custo (	pk(id: integer) , tipo: string , valor: real)
+
+Meio_Divulga cao (pk(id: integer) , nome: string)
+
+Participante _Participara (numero_acesso: integer , fk(id_participante) , fk(id_evento) , fk(id_atacao))
+
+Convidado_Participara ( fk(id_convidado: integer) , fk(id_evento) , fk(id_atracao))
+
+Convidado (pk(id: integer) , nome: string , cpf: integer , capacitacao:string , contribuicao:string , dia_disponivel: date,fk(endereco))
+
+Endereco (pk (id: integer) , cidade: string , bairro : string , rua: string , numero: integer , complemento: string , ponto_referencia: string)
+
+Telefone ( fk(id: integer) , numero: interger)
+
+Atracao (pk(id: integer) , tema: string , max_participantes: integer , local: string , taxa_inscricao: real, fk(tipo_atracao: integer), fk(id_evento) )
+
+Organizador  ( pk(id: integer) , nome: string , email: string , fk(supervisor: integer),fk(endereco),fk(telefone))
+
+tarefa (k(i d: integer), nome: string , modo_tarefa:string , hora_inicio:hora , data_inicio: date)
+
+Fornecedor_Fornece( fk (if_atracao:integer),fk(id_equipamento),fk(id_fornecedor))
+
+
+Fornecedor_Juridico(fk(id : integer) , cnpj: integer)
+
+Fornecedor_Fisico(fk(id : integer) , cpf: integer)
+
+
+Fornecedor (pk(id: integer), nome: string , email: string, fk(endereco),fk(telefone))
+
+Tipo_Atracao  (pk(id: integer), nome: string)
+
+Horario ( fk (id_atracao:integer),fk(id_data:integer),fk(id_hora:integer)
+
+Equipamento (pk(id: integer) , nome: string , quantidade: integer , fk(tipo: integer))
+
+Hora( pk(id:  integer), hora_inicio: hora, hora_fim: hora)
+
+Data( pk(id:  integer) , data_inicio:date, dara_fim:date)
+
+Tipo_Equipamento (pk(id: integer), nome: string)
